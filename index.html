@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  background-color:rgba(0, 0, 0, 0.8);
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+  width :100%;
+  
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.more {
+  border-color: #e7e7e7;
+  color: black;
+}
+
+.more:hover {
+  background: #e7e7e7;
+}
+
+.text1 {
+  width: 1024px;
+  height: 250px;
+  border-color:rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  background-color:rgba(0, 0, 0, 0.1);
+}
+
+.btn.review {
+  padding: 10px 30px;
+  font-size: 12px;
+}
+
+.btn.review:hover {
+  background:rgba(0, 0, 0, 0.4);
+}
+
+.BoardIn {
+  display: block;
+}
+
+</style>
+<body>
+
+<h2 style="text-align:center; ">전세계의 아름다운 여행지</h2>
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext" >1 / 6</div>
+    <img src="1_Valencia.jpg" style="width: 1024px; height: 600px; display: block; margin: 0px auto;">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext" >2 / 6</div>
+    <img src="2_Annecy.jpg" style="width: 1024px; height: 600px; display: block; margin: 0px auto;">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext" >3 / 6</div>
+    <img src="3_Valladolid.jpg" style="width: 1024px; height: 600px; display: block; margin: 0px auto;">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext" >4 / 6</div>
+    <img src="4_Sofia.jpg" style="width: 1024px; height: 600px; display: block; margin: 0px auto;">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext" >5 / 6</div>
+    <img src="5_Venice.jpg" style="width: 1024px; height: 600px; display: block; margin: 0px auto;">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext" >6 / 6</div>
+    <img src="6_Lake_Louice.jpeg" style="width: 1024px; height: 600px; display: block; margin: 0px auto;">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="1_Valencia.jpg" style="width:100%" onclick="currentSlide(1)" alt="스페인 - 발렌시아">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="2_Annecy.jpg" style="width:100%" onclick="currentSlide(2)" alt="프랑스 - 앤시">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="3_Valladolid.jpg" style="width:100%" onclick="currentSlide(3)" alt="멕시코 - 바야돌리드">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="4_Sofia.jpg" style="width:100%" onclick="currentSlide(4)" alt="
+      불가리아 - 소피아">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="5_Venice.jpg" style="width:100%" onclick="currentSlide(5)" alt="이탈리아 - 베네치아">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="6_Lake_Louice.jpeg" style="width:100%" onclick="currentSlide(6)" alt="캐나다 - 루이스 호수">
+    </div>
+  </div>
+
+  <div class="Board">
+    <p class="pc1">
+      <div class="BoardIn">
+        <h4 style="display: block; text-align: center;">본인만의 여행지와 후기를 알려 주세요!</h4>
+        <label value="text" style="display: block; text-align: center;"></label>
+        <input type="text" class="text1" id="text1" size=10 maxlength=100 style="display: block; margin: auto;">
+        <button class="btn review" style="display: block; margin: auto;" onclick="submit()">전송</button>
+        <a href="http://www.shinsoojung.pe.kr/other/world.htm">더 알아보기!</a>
+      </div>
+    </p>
+  </div>
+
+</div>
+
+<script>
+var myname = prompt("이름을 입력해 주세요.");
+alert(myname + "님을 위한 전세계의 아름다운 여행지를 소개합니다!");
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+  if(n==1) myslides.style.backgroundColor = black;
+}
+
+function submit(){
+  alert("전송되었습니다.");
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    
+</body>
+</html>
